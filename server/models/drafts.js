@@ -1,8 +1,8 @@
 const { Pool } = require('pg');
-const PG_URL = process.env.PG_URL
+const PG_URI = process.env.PG_URI;
 
 const pool = new Pool({
-  connectionString: PG_URI
+  connectionString: 'postgres://hyqorqln:WRGZALRQrTXsvkepGcqpWAGkSDR-NYfG@batyr.db.elephantsql.com/hyqorqln'
 });
 
 module.exports = {
