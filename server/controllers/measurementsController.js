@@ -24,6 +24,8 @@ measurementsController.createMeasurement = (req, res, next) => {
   const { id } = req.params;
   const { name, value, unit } = req.body;
 
+  console.log(req.body);
+
   const statement = `WITH new_measurement 
   AS (INSERT INTO measurements(name, value, unit) VALUES ($1, $2, $3) RETURNING _id) 
   INSERT INTO measurement_detail VALUES ($4, (SELECT _id FROM new_measurement));`;
