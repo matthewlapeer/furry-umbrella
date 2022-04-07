@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class ProjectDisplay extends Component {
   constructor(props) {
     super(props);
+    const { id } = props.id;
+    console.log('id:', id);
+  }
 
+  componentDidMount() { 
   }
 
   render() {
@@ -21,3 +25,4 @@ class ProjectDisplay extends Component {
     )
   }
 }
+export default ProjectDisplay;

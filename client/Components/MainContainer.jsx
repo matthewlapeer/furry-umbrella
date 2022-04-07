@@ -41,7 +41,14 @@ class MainContainer extends Component {
     let projects = [];
     for (let i = 0; i < this.state.projects.length; i++) {
       const p = this.state.projects[i];
-      projects.push(<Project name={p.name} id={p._id} key={`project${p._id}`} />);
+      projects.push(
+        <>
+        <Link to="/projects/display" state={{id: p._id}} >
+        <Project name={p.name} id={p._id} key={`project${p._id}`} />
+        </Link>
+        </>
+      
+      );
     }
     return (
       <>

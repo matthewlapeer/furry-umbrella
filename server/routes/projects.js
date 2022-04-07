@@ -23,4 +23,11 @@ router.delete('/:id',
   (req, res) => res.status(200).json('done')
 );
 
+// router.get('/display',
+//   projectsController.getProjects,
+//   (req, res) => res.status(200).json(res.locals.projects)
+// );
+
+
+
 module.exports = router;
