@@ -31,9 +31,12 @@ module.exports = {
     ]
   },
   plugins: [new HtmlWebpackPlugin({
-    template: "index.html",
+    template: path.join(__dirname, 'client', 'index.html'),
   })],
   devServer: {
-    proxy: {'/': 'http://localhost:3000'}
+    proxy: {'/': 'http://localhost:3000/'}
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   }
 };

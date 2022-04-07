@@ -8,12 +8,14 @@ app.use(express.urlencoded({ extended: true }));
 
 //import routers
 const projectsRouter = require('./routes/projects');
+const measurementsRouter = require('./routes/measurements');
 
 //router rules
 app.use('/projects', projectsRouter);
+app.use('/measurements', measurementsRouter);
 
 app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 app.get('/*', (req, res) => {

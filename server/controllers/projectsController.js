@@ -8,6 +8,7 @@ projectsController.getProjects = (req, res, next) => {
   db.query(statement)
     .then(data => {
       res.locals.projects = data.rows;
+      // console.log('db response:',res.locals.projects);
       return next();
     })
     .catch(error => {
@@ -38,14 +39,21 @@ projectsController.createProject = (req, res, next) => {
 }
 
 projectsController.updateProject = (req, res, next) => {
-  const { id } = req.params.id;
-  const { name } = req.body.name;
+  const { id } = req.params;
+  const { name } = req.body;
+  
+  if (!id || !name) {
+    return next({
+      log: `projectsController.updateProject, request information missing`,
+      message: {err: 'unable to update project'},
+    })
+  }
   
   const statement = 'UPDATE projects SET name = $1 WHERE _id = $2';
 
   db.query(statement, [name, id])
     .then(data => {
-      console.log(data);
+      if (data.rowCount === 0) {throw new Error('database update failed')}
       return next();
     })
     .catch(error => {
@@ -57,13 +65,13 @@ projectsController.updateProject = (req, res, next) => {
 }
 
 projectsController.deleteProject = (req, res, next) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
   
   const statement = 'DELETE FROM projects WHERE _id = $1';
 
   db.query(statement, [id])
     .then(data => {
-      console.log(data);
+      if (data.rowCount === 0) {throw new Error('database entry deletion failed')}
       return next();
     })
     .catch(error => {
