@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 
 import MainContainer from './Components/MainContainer';
 import ProjectDisplay from './Components/ProjectDisplay';
+import './Stylesheets/style.css';
 
 const App = props => {
   return (

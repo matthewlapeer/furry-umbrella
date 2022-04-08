@@ -1,0 +1,124 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  background-color: #BBC2C9;
+}
+h1 {
+  color: #3D515C;
+  font-size: 3.5em;
+  text-align: center;
+}
+h2 {
+  color: #3D515C;
+}
+
+div.projectsContainer {
+  display: flex;
+  flex-direction: column;
+}
+div.projectTile {
+  background-color:#6E8792;
+  min-width: 12rem;
+  min-height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+  flex-direction: column
+}
+
+div.projectTile h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+div.projectTile a {
+  color: #F5B9AE;
+  text-decoration: none;
+}
+div.projectTile a:visited {
+  color: #F5B9AE;
+  text-decoration: none;
+}
+
+div.projectHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+div.projectsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  background-color: #3D515C;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+span.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  color: #3D515C;
+}
+button.measurement {
+  min-width: 6rem;
+  height: 4rem;
+  border-radius: 10px;
+  background-color: #F5B9AE;
+  color: #3D515C;
+  border-color: #DC9B3E;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+div.measurements {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+div.gradientLine {
+  height: 2px;
+  background: linear-gradient(0.25turn, #F5B9AE, #f69d3c);
+}
+div.measurementsContainer {
+  background-color: #6E8792;
+  padding-left: 4rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+h2.measurements  {
+  padding-left: 4rem;
+}
+h4.measurements  {
+  padding-left: 4rem;
+  color: #3D515C;
+}
+div.modal {
+  position: absolute;
+  background-color: #DC9B3E;
+  border-radius: 3px;
+}
+p.modal {
+  text-align: center;
+}
+h3.modal {
+  text-align: center;
+}

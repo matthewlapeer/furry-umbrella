@@ -19,10 +19,10 @@ class SaveModal extends Component {
   render() {
     return (
       <>
-      <h3>{this.props.value} {this.props.unit}</h3>
-      <p>{this.state.name || '...'}</p>
+      <h3 className="modal">{this.props.value} {this.props.unit}</h3>
+      <p className="modal">{this.state.name || '...'}</p>
       <form onSubmit={this.save}>
-        <label htmlFor='nameInput'>{this.props.value} mm</label>
+        <label htmlFor='nameInput'>Name:</label>
         <input id='nameInput' type='text' onChange={this.updateName}></input>
         <button type='submit'>Enter</button>
       </form>

@@ -9,7 +9,7 @@ class Measurement extends Component {
   render() {
     return (
       <>
-      <button onClick={() => {this.props.click(this.props.value)}}>{this.props.name}</button>
+      <button className="measurement" onClick={() => {this.props.click(this.props.value)}}>{this.props.name}</button>
       </>
     )
   }

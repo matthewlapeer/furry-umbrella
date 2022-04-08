@@ -43,25 +43,31 @@ class MainContainer extends Component {
       const p = this.state.projects[i];
       projects.push(
         <div className="projectTile" key={'project' + p._id}>
-        <Link to="/projects/display" state={{id: p._id} } >
-        <Project name={p.name} id={p._id} />
-        </Link>
+          <span className="delete">X</span>
+          <Link to="/projects/display" state={{id: p._id, name: p.name} } >
+              <Project name={p.name} id={p._id} />
+          </Link>
         </div>
       
       );
     }
     return (
-      <>
-      <h2>Projects</h2>
-      <form onSubmit={this.getProjectName}>
-        <label htmlFor='projectNameInput'>Name:</label>
-        <input id='projectNameInput' type='text'></input>
-        <button type='submit'>Add Project</button>
-      </form>
-      {projects}
-      <h2>Ideas</h2>
-      <h2>Inspiration</h2>
-      </>
+      <div className="projectsContainer">
+        <div className="projectHeader">
+        <h2>Projects</h2>
+        <form onSubmit={this.getProjectName}>
+          <label htmlFor='projectNameInput'>Name:</label>
+          <input id='projectNameInput' type='text'></input>
+          <button type='submit'>Add Project</button>
+        </form>
+        </div>
+        <div className="gradientLine"></div>
+        <div className="projectsWrapper">
+          {projects}
+        </div>
+      {/* <h2>Ideas</h2>
+      <h2>Inspiration</h2> */}
+      </div>
     );
   }
 }

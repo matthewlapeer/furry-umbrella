@@ -21,11 +21,11 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.[c]ss$/i,
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader",
+          // "sass-loader",
         ],
       }
     ]

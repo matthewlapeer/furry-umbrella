@@ -75,7 +75,7 @@ class ProjectDisplay extends Component {
 
   render() {
     let measurements = [];
-    console.log(this.state.measurements)
+    console.log(this.props)
     for (let i = 0; i < this.state.measurements.length; i++) {
       let m = this.state.measurements[i];
       measurements.push(<Measurement name={m.name} value={m.value} id={m._id} key={m._id} click={this.measurementClick}/>);
@@ -83,21 +83,27 @@ class ProjectDisplay extends Component {
     
     return (
       <>
-      <h2>{this.props.name}</h2>
-      <h4>Measurements</h4>
-      {measurements}
+      <h2 className="measurements">{this.props.id.name}</h2>
+      <h4 className="measurements">Saved Measurements</h4>
+      <div className="measurementsContainer" >
+      <div className="measurements">
+        {measurements}
+      </div>
       <form onSubmit={(e) => {this.calculateNewMeasurement(e, this.state)}}>
         <label htmlFor='calculationInput'>Calculate new measurement: </label>
         <input id='calculationInput' type='text' onKeyPress={this.validateKeypress}></input>
         <button type='submit'>Calculate</button>
       </form>
-      {this.state.modalState.open &&
+        <div className="modal">
+        {this.state.modalState.open &&
           <SaveModal
             value={this.state.calculated}
             closeModal={this.closeModal}
             save={this.save}
           />
         }
+        </div>
+      </div>
       </>
     )
   }
